@@ -3,14 +3,18 @@ https://cloud.google.com/pubsub
 
 You'll need a GCP account and the CLI.
 
-First create the subscriptions and topics, you can do this in the console or from the CLI:
+First create the topics and subscriptions, you can do this in the console or from the CLI like:
+
+`gcloud pubsub topics create words`
+
+`gcloud pubsub topics create fish`
 
 `gcloud pubsub subscriptions create words-sub --topic=words`
 
 `gcloud pubsub subscriptions create fish-sub --topic=fish`
 
 You'll need some way to authenticate yourself, in this example I'm using a service account key file referenced in 
-application.yml - https://cloud.google.com/iam/docs/service-accounts
+application.yml - https://cloud.google.com/iam/docs/creating-managing-service-account-keys
 
 You can publish a simple text message from:
 `http://localhost:8080/api/publish/YOURMESSAGE`
