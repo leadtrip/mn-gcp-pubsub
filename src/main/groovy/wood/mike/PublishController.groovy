@@ -1,9 +1,11 @@
 package wood.mike
 
 import io.micronaut.core.annotation.NonNull
+import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.PathVariable
+import io.micronaut.http.annotation.Post
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import reactor.core.publisher.Mono
@@ -19,9 +21,15 @@ class PublishController {
         this.myGcpClient = myGcpClient
     }
 
-    @Get('/publish/{word}')
-    Mono<String> publish(@PathVariable @NonNull String word) {
+    @Get('/word/{word}')
+    Mono<String> word(@PathVariable @NonNull String word) {
         logger.info("Publishing $word")
-        myGcpClient.send(word.bytes)
+        myGcpClient.word(word.bytes)
+    }
+
+    @Post('/fish')
+    Mono<String> fish(@Body @NonNull Fish fish) {
+        logger.info("Publishing fish ${fish?.name}")
+        myGcpClient.fish(fish)
     }
 }
