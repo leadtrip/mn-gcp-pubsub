@@ -1,6 +1,13 @@
 ## Micronaut GCP pub/sub based app
+https://cloud.google.com/pubsub
 
-Configure a GCP project and pub/sub topic and subscription - https://cloud.google.com/pubsub
+You'll need a GCP account and the CLI.
+
+First create the subscriptions and topics, you can do this in the console or from the CLI:
+
+`gcloud pubsub subscriptions create words-sub --topic=words`
+
+`gcloud pubsub subscriptions create fish-sub --topic=fish`
 
 You'll need some way to authenticate yourself, in this example I'm using a service account key file referenced in 
 application.yml - https://cloud.google.com/iam/docs/service-accounts
