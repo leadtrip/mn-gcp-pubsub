@@ -15,4 +15,4 @@ Or maybe POST a Fish like:
 "name": "Jon"
 }'`
 
-And see it picked up and printed in the console by the listener.
+You'll see both picked up and printed in the console by the listener.

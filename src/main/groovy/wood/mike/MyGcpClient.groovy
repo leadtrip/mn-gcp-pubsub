@@ -7,9 +7,9 @@ import reactor.core.publisher.Mono
 @PubSubClient
 interface MyGcpClient {
 
-    @Topic('snappy-way-378809-topic')
+    @Topic('words')
     Mono<String> word(byte[] data)
 
-    @Topic('snappy-way-378809-topic')
+    @Topic('fish')
     Mono<String> fish(Fish fish)
 }

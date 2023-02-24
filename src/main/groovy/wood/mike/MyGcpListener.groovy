@@ -6,8 +6,13 @@ import io.micronaut.gcp.pubsub.annotation.Subscription
 @PubSubListener
 class MyGcpListener {
 
-    @Subscription('snappy-way-378809-topic-sub2')
+    @Subscription('words-sub')
     void onMessage(byte[] data) {
         println "Message received ${new String(data)}"
+    }
+
+    @Subscription('fish-sub')
+    void onFish(Fish fish) {
+        println "Fish received ${fish.name}"
     }
 }
